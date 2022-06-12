@@ -1,4 +1,5 @@
 Libs/*.dll
+Mod/dll/
 HarmonyMansus/bin/
 HarmonyMansus/obj/
 .vs/
