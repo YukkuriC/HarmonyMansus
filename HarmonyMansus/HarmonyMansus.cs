@@ -5,6 +5,7 @@ public class HarmonyMansus
 {
     public static void Initialise(ISecretHistoriesMod mod)
     {
-        Harmony.CreateAndPatchAll(typeof(ModMain));
+        var patcher = new Harmony("yukkuric." + mod.Id);
+        patcher.PatchAll();
     }
 }
