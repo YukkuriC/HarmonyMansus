@@ -34,12 +34,6 @@
     <Reference Include="0Harmony">
       <HintPath>..\Libs\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="BepInEx">
-      <HintPath>..\Libs\BepInEx.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx.Harmony">
-      <HintPath>..\Libs\BepInEx.Harmony.dll</HintPath>
-    </Reference>
     <Reference Include="SecretHistories.Constants">
       <HintPath>..\Libs\SecretHistories.Constants.dll</HintPath>
       <Private>False</Private>
