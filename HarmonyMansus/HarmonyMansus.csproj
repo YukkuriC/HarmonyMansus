@@ -7,8 +7,8 @@
     <ProjectGuid>{B0C95EEF-5B94-4BBC-A26E-7CCAA0E68B77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomMansus</RootNamespace>
-    <AssemblyName>CustomMansus</AssemblyName>
+    <RootNamespace>HarmonyMansus</RootNamespace>
+    <AssemblyName>HarmonyMansus</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HarmonyMansus.cs" />
+    <Compile Include="ModMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

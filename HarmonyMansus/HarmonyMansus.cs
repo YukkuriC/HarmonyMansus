@@ -5,6 +5,6 @@ public class HarmonyMansus
 {
     public static void Initialise(ISecretHistoriesMod mod)
     {
-        Harmony.CreateAndPatchAll(typeof(HarmonyMansus));
+        Harmony.CreateAndPatchAll(typeof(ModMain));
     }
 }
