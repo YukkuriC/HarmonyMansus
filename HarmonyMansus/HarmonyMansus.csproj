@@ -7,8 +7,8 @@
     <ProjectGuid>{B0C95EEF-5B94-4BBC-A26E-7CCAA0E68B77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HarmonyMansus</RootNamespace>
-    <AssemblyName>HarmonyMansus</AssemblyName>
+    <RootNamespace>AdjustableFastForward</RootNamespace>
+    <AssemblyName>AdjustableFastForward</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

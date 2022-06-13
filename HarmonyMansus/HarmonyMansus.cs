@@ -3,7 +3,7 @@ using HarmonyLib;
 using System;
 
 [HarmonyPatch]
-public class HarmonyMansus
+public class AdjustableFastForward
 {
     public static Harmony patcher;
     public static void Initialise(ISecretHistoriesMod mod)

@@ -1,0 +1,16 @@
+{
+    "cultures": [
+        {
+            "id": "en",
+            "uilabels$add": {
+                "UI_OPT_FASTSCALE": "How fast 'Fast Forward' is"
+            }
+        },
+        {
+            "id": "zh-hans",
+            "uilabels$add": {
+                "UI_OPT_FASTSCALE": "快进倍率"
+            }
+        }
+    ]
+}

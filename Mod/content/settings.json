@@ -1,0 +1,21 @@
+{
+    "settings": [
+        {
+            "id": "FastSpeedScale",
+            "tabid": "UI_GAMEPLAY",
+            "hint": "UI_OPT_FASTSCALE",
+            "minvalue": 0,
+            "maxvalue": 5,
+            "defaultvalue": "1",
+            "datatype": "Single",
+            "valuelabels": {
+                "0": "$x2",
+                "1": "$x3",
+                "2": "$x5",
+                "3": "$x8",
+                "4": "$x13",
+                "5": "$x21"
+            }
+        }
+    ]
+}
