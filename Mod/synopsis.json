@@ -1,7 +1,10 @@
 {
-  "name": "Harmony Mansus",
+  "name": "The Mod",
   "author": "YukkuriC",
   "version": "1.0",
-  "description": "HarmonyX modding.",
-  "description_long": "Adds HarmonyX support for easier code patching in Cultist Simulator modding."
+  "description": "One from void, two from one, everything from two.",
+  "description_long": "One from void, two from one, everything from two.",
+  "dependencies": [
+    "HarmonyMansus>=0.0"
+  ]
 }
