@@ -1,7 +1,7 @@
 {
-  "name": "Harmony Mansus",
+  "name": "Adjustable Fast Forward",
   "author": "YukkuriC",
   "version": "1.0",
-  "description": "HarmonyX modding.",
-  "description_long": "Adds HarmonyX support for easier code patching in Cultist Simulator modding."
+  "description": "Faster!",
+  "description_long": "Now you can adjust how fast the 'fast forward' button is. The new option is in Gameplay menu."
 }
