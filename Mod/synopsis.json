@@ -2,6 +2,6 @@
   "name": "Harmony Mansus",
   "author": "YukkuriC",
   "version": "1.0",
-  "description": "HarmonyX modding.",
-  "description_long": "Adds HarmonyX support for easier code patching in Cultist Simulator modding."
+  "description": "Adds simple Harmony support with auto unpatching.",
+  "description_long": "Adds simple Harmony support with auto unpatching."
 }
