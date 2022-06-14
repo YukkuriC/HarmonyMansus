@@ -2,6 +2,10 @@
 using SecretHistories.Entities;
 using SecretHistories.Fucine;
 using SecretHistories.UI;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using UnityEngine;
 
 [HarmonyPatch]
@@ -9,9 +13,10 @@ public class ModMain
 {
     public const string settingID = "FastSpeedScale";
 
-    public static float speedFactor = 3;
+    public static float speedStep = 3 * 0.05f;
     public static SpeedupTracker tracker;
 
+    [HarmonyPrefix, HarmonyPatch(typeof(Heart), "Awake")]
     public static void Init()
     {
         Setting setting = Watchman.Get<Compendium>().GetEntityById<Setting>(settingID);
@@ -24,12 +29,21 @@ public class ModMain
         tracker.WhenSettingUpdated(setting.CurrentValue);
     }
 
-    [HarmonyPrefix, HarmonyPatch(typeof(Heart), "Beat")]
-    public static void AlteredBeatStep(ref float seconds, ref float metaseconds)
+    [HarmonyTranspiler, HarmonyPatch(typeof(Heart), "ProcessBeatCounter")]
+    public static IEnumerable<CodeInstruction> AlteredBeatStep(IEnumerable<CodeInstruction> instructions)
     {
-        if (seconds == 0 || seconds == metaseconds) return;
-        if (tracker == null) Init();
-        seconds = metaseconds * speedFactor;
+        var beatFunc = AccessTools.Method(typeof(Heart), nameof(Heart.Beat), new System.Type[] { typeof(float), typeof(float) });
+        var codes = new List<CodeInstruction>(instructions);
+        for (int i = 0; i < codes.Count; i++)
+        {
+            var curr = codes[i];
+            if (curr.opcode == OpCodes.Call && (curr.operand as MethodInfo).Name == "Beat") // this.Beat(0.15f, 0.05f);
+            {
+                codes[i - 2] = new CodeInstruction(OpCodes.Ldsfld, AccessTools.Field(typeof(ModMain), nameof(speedStep)));
+                break;
+            }
+        }
+        return codes.AsEnumerable();
     }
 }
 
@@ -40,7 +54,7 @@ public class SpeedupTracker : ISettingSubscriber
     {
         int idx = (newValue is int) ? (int)newValue : 1;
         idx = Mathf.Min(factorMap.Length - 1, Mathf.Max(idx, 0));
-        ModMain.speedFactor = factorMap[idx];
+        ModMain.speedStep = factorMap[idx] * 0.05f;
     }
     public void BeforeSettingUpdated(object newValue) { }
 }
