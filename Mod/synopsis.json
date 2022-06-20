@@ -1,7 +1,6 @@
 {
-  "name": "Harmony Mansus",
+  "name": "Event Freezer",
   "author": "YukkuriC",
   "version": "1.0",
-  "description": "HarmonyX modding.",
-  "description_long": "Adds HarmonyX support for easier code patching in Cultist Simulator modding."
+  "description": "Freeze certain events to stop their moves forever. Press numpad + to add current open event to freezed list, numpad - to recover them to normal."
 }
