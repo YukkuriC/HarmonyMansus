@@ -1,6 +1,6 @@
 {
   "name": "Event Freezer",
   "author": "YukkuriC",
-  "version": "1.0",
-  "description": "Freeze certain events to stop their moves forever. Press numpad + to add current open event to freezed list, numpad - to recover them to normal."
+  "version": "1.1",
+  "description": "Freeze selected events and cards to stop their timers forever. Press numpad + to freeze, numpad - to release."
 }
