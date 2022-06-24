@@ -42,6 +42,16 @@ public class EventFreezer : MonoBehaviour
 
     void Update()
     {
+        try { UpdateInner(); }
+        catch (Exception e)
+        {
+            NoonUtility.LogException(e);
+            gameObject.SetActive(false);
+        }
+    }
+
+    void UpdateInner()
+    {
         updateCounter += Time.deltaTime;
         if (updateCounter > UPDATE_INTERVAL)
         {

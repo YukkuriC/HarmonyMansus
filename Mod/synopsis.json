@@ -1,6 +1,6 @@
 {
   "name": "Event Freezer",
   "author": "YukkuriC",
-  "version": "1.1",
+  "version": "1.1.1",
   "description": "Freeze selected events and cards to stop their timers forever. Press numpad + to freeze, numpad - to release."
 }
