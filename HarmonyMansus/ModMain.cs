@@ -50,6 +50,19 @@ public class EventFreezer : MonoBehaviour
         }
     }
 
+    void HandleFreezeControl(ITokenPayload payload)
+    {
+        if (keyAddPressed())
+        {
+            if (!freezed.Contains(payload)) AddFreeze(payload);
+        }
+        if (keyRemovePressed())
+        {
+            if (freezed.Contains(payload)) RemoveFreeze(payload);
+            else SetTime(payload, getTimeRemaining(payload) / 2);
+        }
+    }
+
     void UpdateInner()
     {
         updateCounter += Time.deltaTime;
@@ -69,21 +82,13 @@ public class EventFreezer : MonoBehaviour
         if (grabber != null)
         {
             var openEvent = grabber.GetCurrentlyOpenSituation();
-            if (openEvent != null)
-            {
-                if (keyAddPressed()) AddFreeze(openEvent);
-                if (keyRemovePressed() && freezed.Contains(openEvent)) RemoveFreeze(openEvent);
-            }
+            if (openEvent != null) HandleFreezeControl(openEvent);
         }
         // update element stacks
         if (tokenInfo != null)
         {
             var stack = (ElementStack)window_stack.GetValue(tokenInfo);
-            if (stack != null)
-            {
-                if (keyAddPressed()) AddFreeze(stack);
-                if (keyRemovePressed() && freezed.Contains(stack)) RemoveFreeze(stack);
-            }
+            if (stack != null) HandleFreezeControl(stack);
         }
         foreach (var s in freezed)
         {
@@ -138,8 +143,7 @@ public class EventFreezer : MonoBehaviour
 
     void RemoveFreeze(ITokenPayload p)
     {
-        if (freezed.Contains(p))
-            freezed.Remove(p);
+        freezed.Remove(p);
         SetTime(p, getMaxTime(p));
         try { p.OnChanged -= AutoRemoveOnRetire; } catch { }
     }
@@ -156,9 +160,11 @@ public class EventFreezer : MonoBehaviour
         {
             var timer = (Timeshadow)stack_shadow.GetValue(p);
             timer.SpendTime(getTimeRemaining(p) - t);
-            return;
         }
-        p.GetToken().ExecuteHeartbeat(getTimeRemaining(p) - t, 0);
+        else if (p is Situation)
+        {
+            p.ExecuteHeartbeat(getTimeRemaining(p) - t, 0);
+        }
     }
     #endregion
 
