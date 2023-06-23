@@ -1,4 +1,4 @@
-﻿using SecretHistories.Constants.Modding;
+﻿using SecretHistories.Infrastructure.Modding;
 using HarmonyLib;
 using System;
 
