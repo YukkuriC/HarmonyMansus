@@ -1,7 +1,7 @@
 {
   "name": "Adjustable Fast Forward",
   "author": "YukkuriC",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Faster! Now you can adjust how fast the 'fast forward' button is.",
   "description_long": "Faster! Now you can adjust how fast the 'fast forward' button is. The new option is in Gameplay(CLARITY) menu. The speed-up factor can go from x2 to x30+ fast, or even as slow as x0.2; default is x3, same as original game."
 }
