@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Application.Infrastructure.Events;
 using SecretHistories.Abstract;
 using SecretHistories.Assets.Scripts.Application.Entities.NullEntities;
-using SecretHistories.Constants.Modding;
+using SecretHistories.Infrastructure.Modding;
 using SecretHistories.Entities;
 using SecretHistories.Logic;
 using SecretHistories.Spheres;
